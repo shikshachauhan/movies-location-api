@@ -19,3 +19,5 @@
 # Ignore configuration Files
 /config/database.yml
 /config/secrets.yml
+
+.rspec

@@ -1,0 +1,48 @@
+Select Location:
+<br/>
+<form url='/' id='location-form'>
+  <input type='text' id='location' name='location'>
+  <input type='submit'>
+</form>
+<br/>
+<br/>
+<br/>
+
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Release Year</th>
+    <th>Location</th>
+    <th>Fun Facts</th>
+    <th>Production House</th>
+    <th>Distributor</th>
+    <th>Director</th>
+    <th>Writer</th>
+    <th>Actor1</th>
+    <th>Actor2</th>
+    <th>Actor3</th>
+  </tr>
+  <% @movies.each do |movie| %>
+  <tr>
+    <td><%= movie.title %></td>
+    <td><%= movie.release_year %></td>
+    <td><%= movie.location %></td>
+    <td><%= movie.fun_facts %></td>
+    <td><%= movie.production %></td>
+    <td><%= movie.distributor %></td>
+    <td><%= movie.director %></td>
+    <td><%= movie.writer %></td>
+    <td><%= movie.actor1 %></td>
+    <td><%= movie.actor2 %></td>
+    <td><%= movie.actor3 %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= javascript_tag do %>
+  arr = <%= raw Movie.pluck(:location).uniq.compact %>;
+  $('#location').autocomplete({
+    source: arr,
+    minLength: 2
+  });
+<% end %>
