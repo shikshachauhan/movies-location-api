@@ -1,28 +1,23 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* use ruby 2.1.5
 
-Things you may want to cover:
+* clone the project
 
-* Ruby version
+* cd movies-location-api
 
-* System dependencies
+* run bundle install
 
-* Configuration
+* add database.yml - take help from database.yml.example in config folder
 
-* Database creation
+* add secrets.yml - take help from secrets.yml.example in config folder
 
-* Database initialization
+* run rake db:create
 
-* How to run the test suite
+* run rake db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
+* run rake load_data
 
-* Deployment instructions
+* start server - run rails server
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+open localhost:3000 in browser
